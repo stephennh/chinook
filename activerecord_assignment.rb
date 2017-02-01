@@ -13,8 +13,8 @@
     PSQL: SELECT COUNT(*) FROM "genres" WHERE "genres"."name" = $1
 
 # 2) Find the total amount of time required to listen to all the tracks in the database.
-
-
+    ActiveQuery: Track.sum(:milliseconds)
+    PSQL: SELECT SUM("tracks"."milliseconds") FROM "tracks"
 
 # 3a) Find the highest price of any track that has the media type "MPEG audio file".
 
