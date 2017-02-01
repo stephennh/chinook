@@ -5,8 +5,8 @@
 
 
 # 1a) Find the genre with the name "Hip Hop/Rap".
-
-
+    ActiveQuery:  Genre.where(name: "Hip Hop/Rap")
+    PSQL: SELECT "genres".* FROM "genres" WHERE "genres"."name" = $1
 
 # 1b) Count how many tracks belong to the "Hip Hop/Rap" genre
 
