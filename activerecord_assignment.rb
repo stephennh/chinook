@@ -25,10 +25,12 @@
     PSQL: SELECT MAX("tracks"."unit_price") FROM "tracks" WHERE "tracks"."media_type_id" = $1
 
 # 4) Find the 2 oldest artists.
-
-
+    ActiveQuery: Track.where(composer: :desc).limit(2)
+    PSQL: SELECT  "tracks".* FROM "tracks" WHERE "tracks"."composer" = $1 LIMIT $2
 
 ### Stretch Exercise (Active Record Query Interface)
 
 
 # 1) Find all the albums whose titles start with B.
+    ActiveQuery: Track.where("name ILIKE?", 'B%')
+    PSQL: SELECT "tracks".* FROM "tracks" WHERE (name ILIKE'B%')
