@@ -9,8 +9,8 @@
     PSQL: SELECT "genres".* FROM "genres" WHERE "genres"."name" = $1
 
 # 1b) Count how many tracks belong to the "Hip Hop/Rap" genre
-
-
+    ActiveQuery: Genre.where(name: "Hip Hop/Rap").count
+    PSQL: SELECT COUNT(*) FROM "genres" WHERE "genres"."name" = $1
 
 # 2) Find the total amount of time required to listen to all the tracks in the database.
 
